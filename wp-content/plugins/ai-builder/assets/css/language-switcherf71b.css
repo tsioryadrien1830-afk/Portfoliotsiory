@@ -1,0 +1,52 @@
+.aibui-lang-switcher-block {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--aibui-switcher-bg, rgba(17, 24, 39, 0.85));
+    color: var(--aibui-switcher-text, #ffffff);
+    padding: 6px 12px;
+    border-radius: var(--aibui-switcher-radius, 999px);
+    min-height: var(--aibui-switcher-min-height, 32px);
+    min-width: var(--aibui-switcher-min-width, 140px);
+}
+
+.aibui-lang-switcher-block .aibui-lang-switcher__form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.aibui-lang-switcher-block select {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-weight: 600;
+    padding: 2px 4px;
+}
+
+.aibui-lang-switcher-block select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.aibui-lang-switcher-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.aibui-lang-switcher-block--no-label .aibui-lang-switcher-label {
+    display: none;
+}
+
+.aibui-lang-switcher-block-preview {
+    border: 1px dashed #cbd5f5;
+    padding: 12px;
+    border-radius: 8px;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.aibui-lang-switcher-block-preview select {
+    min-width: 160px;
+}

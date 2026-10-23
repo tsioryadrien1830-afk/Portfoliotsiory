@@ -1,0 +1,362 @@
+/* =====================================================================
+   AGIS Chat Widget (frontend-only) — synced from admin/styles.css
+   Scoped to #agis-chat-root
+   ===================================================================== */
+
+#agis-chat-root {
+  --agis-bg0: #071019;
+  --agis-bg1: #081827;
+  --agis-panel: rgba(255,255,255,.06);
+  --agis-panel2: rgba(255,255,255,.045);
+  --agis-border: rgba(255,255,255,.10);
+  --agis-text: rgba(255,255,255,.92);
+  --agis-muted: rgba(255,255,255,.65);
+  --agis-brand: #76d949;
+  --agis-brandSoft: rgba(118,217,73,.20);
+  --agis-shadow: 0 18px 50px rgba(0,0,0,.45);
+  --agis-shadowSm: 0 10px 28px rgba(0,0,0,.35);
+  --agis-rXL: 26px;
+  --agis-rLG: 18px;
+  --agis-rMD: 14px;
+}
+
+/* ===== Chat widget layout (structural) ===== */
+#agis-chat-root,
+#agis-chat-root * {
+  box-sizing: border-box;
+}
+
+#agis-chat-root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#agis-chat-root #chatContainer {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: none;
+  box-shadow: var(--agis-shadow);
+  background-color: var(--agis-bg1) !important;
+}
+
+#agis-chat-root #chatContainer .agis-card-header {
+  flex: 0 0 auto;
+  min-height: 44px;
+}
+
+#agis-chat-root #chatContainer .agis-card-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+#agis-chat-root #chatContainer .agis-card-footer {
+  flex: 0 0 auto;
+  margin-top: auto;
+}
+
+#agis-chat-root .agis-user-message,
+#agis-chat-root .agis-ai-message {
+  display: block;
+  margin: 8px 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 88%;
+  word-break: break-word;
+}
+
+#agis-chat-root .agis-user-message.agis-text-right {
+  margin-left: auto;
+  text-align: right;
+}
+
+#agis-chat-root .agis-ai-message.agis-text-left {
+  margin-right: auto;
+  text-align: left;
+}
+
+#agis-chat-root .agis-input-group {
+  width: 100%;
+}
+
+#agis-chat-root #chatInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 38px;
+}
+
+#agis-chat-root #sendMessageBtn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  height: 38px;
+  line-height: 1;
+}
+
+#agis-chat-root button,
+#agis-chat-root .agis-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  border-bottom-width: 1px !important;
+  outline: none;
+}
+
+#agis-chat-root #recordButton {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+/* Override legacy green shell — chatContainer uses look-and-feel colors */
+#agis-chat-root #chatContainer.agis-card {
+  background-color: var(--agis-bg1) !important;
+}
+#agis-chat-root #chatContainer #chatStartMessage {
+  color: var(--agis-muted) !important;
+}
+#agis-chat-root #chatContainer .agis-card-header span {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+/* ===== Inputs (admin + chat) ===== */
+#agis-chat-root input,
+#agis-chat-root select,
+#agis-chat-root textarea {
+
+  background-color: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  color: var(--agis-text);
+  border-radius: 12px;
+
+}
+#agis-chat-root .form-select,
+#agis-chat-root .agis-form-select {
+
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-opacity='.15' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+
+}
+#agis-chat-root input::placeholder,
+#agis-chat-root textarea::placeholder {
+
+  color: rgba(255,255,255,.45);
+
+}
+/* Base button (admin + chat) */
+#agis-chat-root .agis-btn {
+
+  background: rgba(20,30,45,.85) !important;
+  color: rgba(255,255,255,.96) !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+  border-radius: 8px !important;
+  padding: 6px 16px !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  text-shadow: 0 1px 0 rgba(0,0,0,.35);
+  transition: all .15s ease;
+
+}
+#agis-chat-root .agis-btn:hover {
+
+  background: rgba(35,50,70,.95) !important;
+  transform: translateY(-1px);
+
+}
+#agis-chat-root .agis-btn-primary {
+
+  background: rgba(118,217,73,.35) !important;
+  border-color: rgba(118,217,73,.65) !important;
+  color: #ffffff !important;
+
+}
+#agis-chat-root .agis-btn-primary:hover {
+
+  box-shadow: 0 0 22px rgba(118,217,73,.45);
+
+}
+#agis-chat-root .agis-btn-danger {
+
+  background: rgba(255,80,80,.38) !important;
+  border-color: rgba(255,80,80,.65) !important;
+  color: #ffffff !important;
+
+}
+#agis-chat-root .agis-btn:disabled {
+
+  opacity: .45 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+
+}
+/* Chat message typography (#agis-chat-root only) */
+#agis-chat-root .agis-ai-message.agis-text-left * {
+
+  font-size: inherit !important;
+
+}
+#agis-chat-root .agis-user-message p,
+#agis-chat-root .agis-ai-message p {
+
+  margin: 6px 0;
+  line-height: 1.4;
+  word-break: break-word;
+  color: inherit !important;
+  font-size: inherit !important;
+
+}
+#agis-chat-root #chatMessages .agis-user-message ul,
+#agis-chat-root #chatMessages .agis-user-message ol,
+#agis-chat-root #chatMessages .agis-ai-message ul,
+#agis-chat-root #chatMessages .agis-ai-message ol {
+
+  margin: 6px 0 6px 18px;
+  padding: 0;
+
+}
+#agis-chat-root .agis-user-message li,
+#agis-chat-root .agis-ai-message li {
+
+  margin-bottom: 4px;
+
+}
+#agis-chat-root .agis-user-message code,
+#agis-chat-root .agis-ai-message code {
+
+  background: rgba(0, 0, 0, 0.08);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 0.9em;
+
+}
+#agis-chat-root select:hover,
+#agis-chat-root select:focus,
+#agis-chat-root .agis-form-select:hover,
+#agis-chat-root .agis-form-select:focus {
+
+  background-color: rgba(30,45,65,.95) !important;
+  border-color: rgba(118,217,73,.55) !important;
+  outline: none !important;
+
+}
+#agis-chat-root select option {
+
+  background-color: rgba(20,30,45,.95) !important;
+  color: rgba(255,255,255,.95) !important;
+
+}
+#agis-chat-root select option:disabled {
+
+  color: rgba(255,255,255,.45) !important;
+
+}
+#agis-chat-root .agis-form-text {
+
+  color: white !important;
+
+}
+/* ===== CHAT WIDGET STYLES (#agis-chat-root only) ===== */
+#agis-chat-root .agis-card {
+
+	background-color: #c4ddae !important;
+
+}
+#agis-chat-root .agis-card h5 {
+
+	color: #198754 !important;
+
+}
+#agis-chat-root .agis-card h4 {
+
+	color: #198754 !important;
+
+}
+#agis-chat-root .agis-card h3 {
+
+	color: #198754 !important;
+
+}
+#agis-chat-root .fas {
+
+	color: #198754 !important;
+
+}
+#agis-chat-root .agis-card-text {
+
+	color: #198754 !important;
+
+}
+#agis-chat-root #chatStartMessage {
+
+	color: #198754 !important;
+
+}
+#agis-chat-root .agis-email-captured {
+
+	color: #198754 !important;
+
+}
+/* ===== AGIS CHAT LAYOUT UTILITIES ===== */
+#agis-chat-root .agis-d-flex {
+ display: flex; 
+}
+#agis-chat-root .agis-justify-content-between {
+ justify-content: space-between; 
+}
+#agis-chat-root .agis-justify-content-end {
+ justify-content: flex-end; 
+}
+#agis-chat-root .agis-justify-content-start {
+ justify-content: flex-start; 
+}
+#agis-chat-root .agis-align-items-center {
+ align-items: center; 
+}
+#agis-chat-root .agis-my-2 {
+ margin-top: 0.5rem; margin-bottom: 0.5rem; 
+}
+#agis-chat-root .agis-btn-group {
+ display: inline-flex; gap: 4px; 
+}
+#agis-chat-root .agis-input-group {
+ display: flex; gap: 8px; align-items: center; 
+}
+#agis-chat-root .agis-text-right {
+ text-align: right; 
+}
+#agis-chat-root .agis-text-left {
+ text-align: left; 
+}
+#agis-chat-root .agis-text-center {
+ text-align: center; 
+}
+#agis-chat-root .agis-text-muted {
+ color: var(--agis-muted) !important; 
+}
+#agis-chat-root .agis-card-header {
+ padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,.1); 
+}
+#agis-chat-root .agis-card-body {
+ padding: 16px; flex: 1; 
+}
+#agis-chat-root .agis-card-footer {
+ padding: 12px 16px; border-top: 1px solid rgba(255,255,255,.1); 
+}
+#agis-chat-root .agis-form-control {
+ flex: 1; padding: 8px 12px; border-radius: 8px; 
+}
+#agis-chat-root #chatInput:focus {
+ outline: none; box-shadow: none; 
+}
+#agis-chat-root #sendMessageBtn {
+ border: none !important; box-shadow: none !important; 
+}
+#agis-chat-root #sendMessageBtn:hover {
+ box-shadow: none !important; 
+}
+#agis-chat-root .agis-btn-sm {
+ padding: 4px 12px !important; font-size: 12px !important; 
+}

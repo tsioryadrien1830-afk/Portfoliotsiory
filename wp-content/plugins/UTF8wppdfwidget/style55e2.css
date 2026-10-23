@@ -1,0 +1,11 @@
+
+.pdf-widget-list { list-style: none; padding: 0; }
+.pdf-widget-list li { margin-bottom: 8px; }
+.pdf-widget-list a {
+    text-decoration: none;
+    background: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.pdf-widget-list a:hover { background: #45a049; }

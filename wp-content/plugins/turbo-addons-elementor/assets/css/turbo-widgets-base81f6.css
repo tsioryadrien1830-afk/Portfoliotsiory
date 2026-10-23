@@ -1,0 +1,34 @@
+/* =========================================================================
+   Turbo Addons Elementor — Global widget base styles
+   Central place for common link resets shared across all widgets.
+   ========================================================================= */
+
+/* Remove the browser-default underline from all Turbo Addons widget
+   buttons / CTA / link elements. Widgets that intentionally use an
+   underlined text link (e.g. cookie consent "learn more", modal trigger
+   text) are NOT included here on purpose. */
+a.trad-custom-button,
+.trad-custom-button-container a,
+a.trad-infobox-button,
+a.trad-image-card-readmore-btn,
+a.trad-preview-button-readmore,
+a.trad-blue-cta-button1,
+a.trad-blue-cta-button2,
+a.trad-event-calender-registration-button,
+a.trad_data_table_custom_btn,
+a.trad-metro-grid-link,
+a.trad-team-slider-social-link,
+a.trad-scroll-link,
+a.button-pricing-action,
+a.project-card__btn,
+.trad-food-menu-list a,
+.trad-most-top-bar a,
+.trad-social-icons a,
+.trad-photo-stack-wrap a,
+.trad-preview-card a,
+.trad-img-card-wrapper a,
+.trad-image-carousel a,
+.trad-carousel-logo a,
+.trad-cta-wrapper a {
+    text-decoration: none !important;
+}
